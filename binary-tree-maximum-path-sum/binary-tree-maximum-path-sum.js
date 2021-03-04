@@ -23,6 +23,7 @@ var maxPathSum = function(root) {
 
         const ms = Math.max(Math.max(leftSum, rightSum) + root.val, root.val);
         const m2 = Math.max(ms, leftSum + rightSum + root.val);
+
         resultMax = Math.max(m2, resultMax);
 
         return ms;
