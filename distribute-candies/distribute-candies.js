@@ -4,11 +4,7 @@
  */
 var distributeCandies = function(candyType) {
     const countToEat = candyType.length / 2;
-    const set = new Set();
+    const set = new Set(candyType);
     
-    for (let i = 0; i < candyType.length; i++) {
-        set.add(candyType[i]);
-    }
-    
-    return set.size > countToEat ? countToEat : set.size;
+    return Math.min(set.size, countToEat);
 };
