@@ -1,3 +1,4 @@
+[Discussion Post (created on 26/2/2021 at 9:37)](https://leetcode.com/problems/sort-characters-by-frequency/submissions/)  
 <h2>451. Sort Characters By Frequency</h2><h3>Medium</h3><hr><div><p>Given a string, sort it in decreasing order based on the frequency of characters.</p>
 
 <p><b>Example 1:</b>
