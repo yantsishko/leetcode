@@ -40,22 +40,58 @@
  * @param {NestedInteger[]} nestedList
  * @return {number}
  */
+// T = O(N)
+// S = O(N) [[1], [2], [1]]
 var depthSum = function(nestedList, level = 1) {
     let result = 0;
-    
-    const dfs = (list, level = 1) => {
-        for (let i = 0; i < list.length; i++) {
-            if (list[i].isInteger()) {
-                result = result + list[i].getInteger() * level;
-            }
-            const listElement = list[i].getList();
-            if (listElement.length) {
-               dfs(listElement, level + 1); 
-            }
+
+    for (let i = 0; i < nestedList.length; i++) {
+        if (nestedList[i].isInteger()) {
+            result += nestedList[i].getInteger() * level;
+        } else {
+            result += depthSum(nestedList[i].getList(), level + 1);
         }
     }
     
-    dfs(nestedList, 1);
-    
     return result;
 };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// var depthSum = function(nestedList, level = 1) {
+//     let result = 0;
+    
+//     const dfs = (list, level = 1) => {
+//         for (let i = 0; i < list.length; i++) {
+//             if (list[i].isInteger()) {
+//                 result = result + list[i].getInteger() * level;
+//             }
+//             const listElement = list[i].getList();
+//             if (listElement.length) {
+//                dfs(listElement, level + 1); 
+//             }
+//         }
+//     }
+    
+//     dfs(nestedList, 1);
+    
+//     return result;
+// };
