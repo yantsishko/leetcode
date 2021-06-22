@@ -68,7 +68,7 @@ var verticalOrder = function(root) {
         }
         
     }
-    console.log(Object.entries(result).sort((a, b) => a[0] - b[0]));
+
     return Object.entries(result).sort((a, b) => a[0] - b[0]).map(item => item[1]);
     
 };
