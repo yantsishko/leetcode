@@ -13,14 +13,15 @@
  * S = O(N)
  */
 var findLeaves = function(root) {
+    if (!root) return [];
     const res = [];
-    const dfs = (node) => {
+    const bfs = (node) => {
         if (!node) {
             return -1;
         }
         
-        const left = dfs(node.left);
-        const right = dfs(node.right);
+        const left = bfs(node.left);
+        const right = bfs(node.right);
         
         const currentHeight = Math.max(left, right) + 1;
 
@@ -33,7 +34,7 @@ var findLeaves = function(root) {
         return currentHeight;
     }
     
-    dfs(root);
+    bfs(root);
     
     return res;
 };
